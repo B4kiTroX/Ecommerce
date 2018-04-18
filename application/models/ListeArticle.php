@@ -1,5 +1,5 @@
 <?php
-class ModeleArticle extends CI_Model {
+class ListeArticle extends CI_Model {
  
 public function __construct()
 {

@@ -7,14 +7,16 @@
       $this->load->helper('url');
       $this->load->helper('assets'); // helper 'assets' ajouté a Application
       $this->load->library("pagination");
-      $this->load->model('ModeleArticle'); // chargement modèle, obligatoire
-      $this->load->model('ModeleUtilisateur');
+      $this->load->model('ListeArticle'); // chargement modèle, obligatoire
    } // __construct
 
-    public function VoirArticle()
- {
-
- }// VoirArticle
+   public function listerLesArticles() // lister tous les articles
+   {
+      $DonneesInjectees['lesArticles'] = $this->ListeArticle->retournerArticles();
+      $DonneesInjectees['TitreDeLaPage'] = 'Tous les articles';
  
-
-}
+      $this->load->view('templates/Entete');
+      $this->load->view('vue', $DonneesInjectees);
+      $this->load->view('templates/PiedDePage');
+   } // listerLesArticles
+}  // clients
