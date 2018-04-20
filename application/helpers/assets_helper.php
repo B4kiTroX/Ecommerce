@@ -31,3 +31,12 @@ if ( ! function_exists('img'))
     return '<img src="' . img_url($nom) . '" alt="' . $alt . '" />';
   }
 }
+
+if ( ! function_exists('img_taille'))
+{
+  function img_taille($nom, $alt = '')
+  {
+    return '<img src="' . img_url($nom) . '" class="img-responsive" style="width:100%" alt="' . $alt . '" />';
+  }
+}
+

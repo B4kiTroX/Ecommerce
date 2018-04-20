@@ -15,7 +15,7 @@ $this->load->database();
              return $requete->result_array(); // retour d'un tableau associatif
         }
         // ici on va chercher l'article dont l'id est $pNoArticle
-        $requete = $this->db->get_where('produit', array('cNo' => $pNoArticle));
+        $requete = $this->db->get_where('produit', array('NOPRODUIT' => $pNoArticle));
         return $requete->row_array(); // retour d'un tableau associatif
      } // fin retournerArticles
  
