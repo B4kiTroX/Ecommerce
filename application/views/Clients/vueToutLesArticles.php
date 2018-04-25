@@ -1,12 +1,12 @@
 <div class="jumbotron">
   <div class="container text-center">
-    <h1><?php echo $TitreDeLaPage ?></h1>      
-    <p>Some text that represents "Me"...</p>
+    <h1>HamonAutomobile</h1>      
+    <p>Mariage du luxe, de la sportivité et de la performance. Berline, Coupé, Cabriolet, et plus encore. Découvrez nos produits, compétition, technologie et innovation… découvrez tout l'univers des véhicules de luxe.</p>
   </div>
 </div>
   
 <div class="container-fluid bg-3 text-center">    
-  <h3>Some of my Work</h3><br>
+  <h3><?php echo $TypeDeLaPage ?></h3><br>
   <div class="row">
     <div class="col-sm-3">
       <?php

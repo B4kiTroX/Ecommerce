@@ -13,26 +13,27 @@
    public function listerLesArticles() // lister tous les articles
    {
       $DonneesInjectees['lesArticles'] = $this->ListeArticle->retournerArticles();
-      $DonneesInjectees['TitreDeLaPage'] = 'HamonAutomobile';
+      $DonneesInjectees['TypeDeLaPage'] = 'Liste des véhicules';
+ 
+      $this->load->view('templates/Entete');
+      $this->load->view('Clients/vueToutLesArticles', $DonneesInjectees);
+      $this->load->view('templates/PiedDePage');
+   } // listerLesArticles
+
+   public function voirUnArticle($noArticle = NULL) // valeur par défaut de noArticle = NULL
+   {
+      $DonneesInjectees['unArticle'] = $this->ModeleArticle->retournerArticles($noArticle);
+ 
+      if (empty($DonneesInjectees['unArticle']))
+      {   // pas d'article correspondant au n°
+         show_404();
+      }
+ 
+      $DonneesInjectees['TitreDeLaPage'] = $DonneesInjectees['unArticle']['LIBELLE'];
+      // ci-dessus, entrée ['cTitre'] de l'entrée ['unArticle'] de $DonneesInjectees
  
       $this->load->view('templates/Entete');
       $this->load->view('Clients/vue', $DonneesInjectees);
       $this->load->view('templates/PiedDePage');
-   } // listerLesArticles
-   public function voirUnArticle($noArticle = NULL) // valeur par défaut de noArticle = NULL
-{
-  $DonneesInjectees['unArticle'] = $this->ModeleArticle->retournerArticles($noArticle);
- 
-  if (empty($DonneesInjectees['unArticle']))
-  {   // pas d'article correspondant au n°
-      show_404();
-  }
- 
-  $DonneesInjectees['TitreDeLaPage'] = $DonneesInjectees['unArticle']['LIBELLE'];
-  // ci-dessus, entrée ['cTitre'] de l'entrée ['unArticle'] de $DonneesInjectees
- 
-  $this->load->view('templates/Entete');
-  $this->load->view('Clients/vue', $DonneesInjectees);
-  $this->load->view('templates/PiedDePage');
-} // voirUnArticle
+    } // voirUnArticle
 }  // clients
