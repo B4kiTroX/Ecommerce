@@ -39,4 +39,10 @@ if ( ! function_exists('img_taille'))
     return '<img src="' . img_url($nom) . '" class="img-responsive" style="width:100%" alt="' . $alt . '" />';
   }
 }
-
+if ( ! function_exists('img_icon'))
+{
+  function img_icon($nom, $alt = '')
+  {
+    return '<img src="' . img_url($nom) . '" alt="' . $alt . '" />';
+  }
+}

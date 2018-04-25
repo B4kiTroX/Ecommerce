@@ -1,6 +1,6 @@
 <div class="jumbotron">
   <div class="container text-center">
-    <h1>HamonAutomobile</h1>      
+    <h1>HamonAutomobile</h1>
     <p>Mariage du luxe, de la sportivité et de la performance. Berline, Coupé, Cabriolet, et plus encore. Découvrez nos produits, compétition, technologie et innovation… découvrez tout l'univers des véhicules de luxe.</p>
   </div>
 </div>
@@ -11,7 +11,7 @@
     <div class="col-sm-3">
       <?php
       foreach ($lesArticles as $unArticle):
-        echo '<h3>'.anchor('Clients/lesArticles/'.$unArticle['NOPRODUIT'],$unArticle['LIBELLE']).'</h3>'.anchor('Clients/lesArticles/'.$unArticle['NOPRODUIT'],img_taille($unArticle['NOMIMAGE']));
+        echo '<h3>'.anchor('Clients/voirUnArticle/'.$unArticle['NOPRODUIT'],$unArticle['LIBELLE']).'</h3>'.anchor('Clients/voirUnArticle/'.$unArticle['NOPRODUIT'],img_taille($unArticle['NOMIMAGE']));
         
       endforeach;
     ?>

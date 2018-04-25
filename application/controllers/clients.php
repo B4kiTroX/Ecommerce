@@ -22,18 +22,19 @@
 
    public function voirUnArticle($noArticle = NULL) // valeur par défaut de noArticle = NULL
    {
-      $DonneesInjectees['unArticle'] = $this->ModeleArticle->retournerArticles($noArticle);
+      $DonneesInjectees['unArticle'] = $this->ListeArticle->retournerArticles($noArticle);
  
       if (empty($DonneesInjectees['unArticle']))
       {   // pas d'article correspondant au n°
          show_404();
       }
  
-      $DonneesInjectees['TitreDeLaPage'] = $DonneesInjectees['unArticle']['LIBELLE'];
+      $DonneesInjectees['TitreDeArticle'] = $DonneesInjectees['unArticle']['LIBELLE'];
+      $DonneesInjectees['DescriptionDeArticle'] = $DonneesInjectees['unArticle']['DETAIL'];
       // ci-dessus, entrée ['cTitre'] de l'entrée ['unArticle'] de $DonneesInjectees
  
       $this->load->view('templates/Entete');
-      $this->load->view('Clients/vue', $DonneesInjectees);
+      $this->load->view('Clients/vueUnArticle', $DonneesInjectees);
       $this->load->view('templates/PiedDePage');
     } // voirUnArticle
 }  // clients
